@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutra Landing</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    body { background: #ffffff; color: #111; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 80px 0; }
+    h1 { font-size: 48px; line-height: 1.1; margin-bottom: 20px; }
+    h2 { font-size: 36px; margin-bottom: 10px; text-align: center; }
+    p { color: #555; font-size: 18px; line-height: 1.5; }
+
+    .hero { background: linear-gradient(135deg, #f8f8f8, #ffffff); }
+    .hero-wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+
+    .buttons { display: flex; gap: 15px; margin: 30px 0; flex-wrap: wrap; }
+    button, .call-btn, .tg-btn { border: none; padding: 14px 22px; border-radius: 14px; font-size: 16px; cursor: pointer; transition: 0.2s; text-decoration: none; display: inline-block; }
+    .primary { background: #111; color: white; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+    .primary:hover { transform: translateY(-2px); }
+    .secondary { background: white; border: 1px solid #ddd; }
+    .call-btn { background: #25D366; color: white; }
+    .tg-btn { background: #2AABEE; color: white; }
+
+    .phone { margin-top: 10px; font-size: 18px; font-weight: 500; }
+    .disclaimer { margin-top: 8px; font-size: 13px; color: #888; }
+
+    .hero-media { width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+    .card { background: white; padding: 25px; border-radius: 18px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    .card h3 { margin-bottom: 10px; font-size: 20px; }
+    .card p { font-size: 15px; color: #666; }
+
+    .features { background: #f7f7f7; }
+    .reasons { background: white; }
+    .testimonials { background: #f7f7f7; }
+
+    .quote { font-size: 16px; color: #444; }
+    .author { margin-top: 10px; font-size: 14px; color: #888; }
+
+    .stats { display: flex; justify-content: center; gap: 40px; margin-top: 30px; font-size: 14px; color: #777; }
+    .stats div { text-align: center; }
+    .stats b { display: block; font-size: 22px; color: #111; }
+
+    .cta { background: #111; color: white; text-align: center; }
+    .cta p { color: #bbb; margin: 10px 0 25px; }
+    .timer { font-size: 28px; margin: 15px 0; font-weight: bold; }
+    .stock { margin-top: 10px; font-size: 14px; color: #ffb3b3; }
+
+    .faq { background: white; }
+    .faq-item { max-width: 800px; margin: 10px auto; border: 1px solid #eee; border-radius: 14px; overflow: hidden; }
+    .faq-q { padding: 18px; cursor: pointer; background: #fafafa; font-weight: 500; }
+    .faq-a { padding: 0 18px; max-height: 0; transition: 0.3s ease; color: #666; font-size: 15px; }
+    .faq-item.active .faq-a { padding: 18px; max-height: 200px; }
+
+    .contact { background: #f7f7f7; }
+    form { max-width: 500px; margin: 30px auto 0; display: flex; flex-direction: column; gap: 12px; }
+    input { padding: 14px; border-radius: 12px; border: 1px solid #ddd; font-size: 15px; }
+
+    footer { border-top: 1px solid #eee; padding: 40px 0; text-align: center; background: #fafafa; font-size: 14px; color: #777; }
+
+    .fade-in { opacity: 0; transform: translateY(20px); transition: 0.6s; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      h1 { font-size: 34px; }
+      h2 { font-size: 26px; }
+      .hero-wrap, .grid-3 { grid-template-columns: 1fr; }
+      .stats { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container hero-wrap">
+      <div class="fade-in">
+        <h1>Натуральная поддержка здоровья каждый день</h1>
+        <p>Современная формула на основе проверенных компонентов. Подходит для ежедневного применения.</p>
+        <div class="buttons">
+          <button class="primary">Заказать сейчас</button>
+          <button class="secondary">Узнать больше</button>
+          <a href="tel:80251234567" class="call-btn">Позвонить</a>
+        </div>
+        <div class="phone">☎ 8(025)123-45-67</div>
+        <div class="stats">
+          <div><b id="orders">1 248</b> заказов сегодня</div>
+          <div><b>4.8 / 5</b> средняя оценка</div>
+          <div><b>97%</b> довольных клиентов</div>
+        </div>
+        <div class="disclaimer">* Не является лекарственным средством</div>
+      </div>
+      <div class="fade-in">
+        <img src="vitamin.jpg" class="hero-media" alt="Product" />
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container fade-in">
+      <h2>Преимущества продукта</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Натуральный состав</h3><p>Только тщательно отобранные ингредиенты.</p></div>
+        <div class="card"><h3>Удобный прием</h3><p>Комфортное применение без сложных схем.</p></div>
+        <div class="card"><h3>Контроль качества</h3><p>Современные стандарты производства.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reasons">
+    <div class="container fade-in">
+      <h2>Почему именно наш продукт</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Работающая формула</h3><p>Комбинация эффективных компонентов.</p></div>
+        <div class="card"><h3>Выбор покупателей</h3><p>Продукт с высоким уровнем доверия.</p></div>
+        <div class="card"><h3>Баланс цены и качества</h3><p>Оптимальное соотношение стоимости и результата.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container fade-in">
+      <h2>Отзывы клиентов</h2>
+      <div class="grid-3">
+        <div class="card"><div class="quote">«Приятно удивлен результатом.»</div><div class="author">— Андрей</div></div>
+        <div class="card"><div class="quote">«Заказ пришел очень быстро.»</div><div class="author">— Марина</div></div>
+        <div class="card"><div class="quote">«Буду заказывать еще.»</div><div class="author">— Игорь</div></div>
+        <div class="card"><div class="quote">«Качество отличное.»</div><div class="author">— Светлана</div></div>
+        <div class="card"><div class="quote">«Все понравилось.»</div><div class="author">— Дмитрий</div></div>
+        <div class="card"><div class="quote">«Рекомендую.»</div><div class="author">— Ольга</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container fade-in">
+      <h2>Вопросы и ответы</h2>
+      <div class="faq-item">
+        <div class="faq-q">Как принимать продукт?</div>
+        <div class="faq-a">Следуйте инструкции на упаковке и придерживайтесь регулярного приема.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Когда ждать результат?</div>
+        <div class="faq-a">Восприятие индивидуально и зависит от особенностей организма.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Есть ли противопоказания?</div>
+        <div class="faq-a">Рекомендуется проконсультироваться со специалистом перед применением.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Как оформить заказ?</div>
+        <div class="faq-a">Свяжитесь с нами удобным способом — телефон или Telegram.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container fade-in">
+      <h2>Специальное предложение</h2>
+      <p>Скидка действует ограниченное время</p>
+      <div class="timer" id="timer">15:00</div>
+      <button class="primary">Оформить заказ</button>
+      <div class="stock">Осталось упаковок: <span id="stock">23</span></div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container fade-in">
+      <h2>Связаться с нами</h2>
+      <form onsubmit="window.open('https://t.me/fmkddk', '_blank'); return false;">
+        <input type="text" placeholder="Ваше имя" required />
+        <input type="tel" placeholder="Телефон" required />
+        <button class="tg-btn">Написать в Telegram</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    Служба поддержки клиентов • 8(025)123-45-67
+  </footer>
+
+  <script>
+    // Таймер
+    let duration = 15 * 60;
+    const timerEl = document.getElementById('timer');
+    setInterval(() => {
+      const m = Math.floor(duration / 60);
+      const s = duration % 60;
+      timerEl.textContent = `${m}:${s.toString().padStart(2, '0')}`;
+      if (duration > 0) duration--;
+    }, 1000);
+
+    // Псевдо остатки
+    let stock = 23;
+    const stockEl = document.getElementById('stock');
+    setInterval(() => {
+      if (stock > 5 && Math.random() > 0.7) {
+        stock--;
+        stockEl.textContent = stock;
+      }
+    }, 3000);
+
+    // FAQ аккордеон
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('active');
+      });
+    });
+
+    // Анимации
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
